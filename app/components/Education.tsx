@@ -11,8 +11,8 @@ const education = [
     icon: FaGraduationCap,
   },
   {
-    institution: 'High School',
-    degree: 'Completed foundational education in Computer Science and core sciences at elite Kendriya Vidyalayas across India, associated with DRDO, ASC, BRD, and Indian Air Force establishments',
+    institution: 'Kendriya Vidyalayas (DRDO, ASC, BRD, Indian Air Force)',
+    degree: 'High School',
     period: '1998 – 2011',
     icon: FaSchool,
   },
