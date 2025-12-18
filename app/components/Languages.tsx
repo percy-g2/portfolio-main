@@ -14,6 +14,26 @@ const languages = [
     proficiency: 'Native',
     level: 100,
   },
+  {
+    name: 'Punjabi',
+    proficiency: 'Fluent',
+    level: 95,
+  },
+  {
+    name: 'Haryanvi',
+    proficiency: 'Fluent',
+    level: 95,
+  },
+  {
+    name: 'Marathi',
+    proficiency: 'Conversational',
+    level: 70,
+  },
+  {
+    name: 'Kannada',
+    proficiency: 'Basic',
+    level: 45,
+  },
 ]
 
 export default function Languages() {
@@ -26,13 +46,13 @@ export default function Languages() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center"
         >
-          Languages
+          Spoken and Understandable Languages
         </motion.h2>
         
         <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
           <div className="flex items-center gap-4 mb-6">
             <FaLanguage className="text-3xl text-blue-400" />
-            <h3 className="text-2xl font-bold text-white">Spoken Languages</h3>
+            <h3 className="text-2xl font-bold text-white">Spoken and Understandable Languages</h3>
           </div>
           
           <div className="space-y-6">
