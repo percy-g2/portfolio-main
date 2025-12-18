@@ -16,6 +16,18 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="mb-8 flex justify-center"
+          >
+            <img
+              src="https://github.com/percy-g2.png"
+              alt="Prashant Gahlot"
+              className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-500 shadow-2xl object-cover"
+            />
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -40,7 +52,7 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="text-lg text-gray-400 mb-8"
           >
-            11+ Years of Experience | Kotlin Multiplatform Expert
+            11+ Years in Mobile App Development | Kotlin Multiplatform Expert
           </motion.p>
           
           <motion.div

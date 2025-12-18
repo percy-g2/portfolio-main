@@ -18,7 +18,7 @@ export default function About() {
           <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
             <p className="text-lg text-gray-300 leading-relaxed mb-4">
               Senior Mobile Applications & Multiplatform Engineer with <span className="text-blue-400 font-semibold">11+ years</span> of experience 
-              delivering high-performance Android, iOS, Desktop, and Web applications.
+              in mobile app development, delivering high-performance Android, iOS, Desktop, and Web applications.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-4">
               Proven expertise in <span className="text-purple-400 font-semibold">Kotlin Multiplatform</span>, 

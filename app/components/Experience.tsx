@@ -56,6 +56,36 @@ const experiences = [
       'Focused on performance optimization, reusable components, and UI consistency',
     ],
   },
+  {
+    company: 'XDA Developers',
+    role: 'Senior Developer',
+    period: '2013 – 2014',
+    achievements: [
+      'Addressed core-level bug fixes for various Android devices',
+      'Ensured optimal performance and user experience across multiple device manufacturers',
+      'Contributed to custom ROM development and device optimization',
+    ],
+  },
+  {
+    company: 'Bitserve Technologies LLP',
+    role: 'Co-Founder & Developer',
+    period: '2012 – 2013',
+    achievements: [
+      'Co-founded startup specializing in flight and cab booking services using bitcoins in India',
+      'Developed innovative payment solutions integrating cryptocurrency',
+      'Led technical architecture and development of booking platforms',
+    ],
+  },
+  {
+    company: 'Cyanogen (now LineageOS)',
+    role: 'Software Developer',
+    period: '2011 – 2012',
+    achievements: [
+      'Contributed to custom Android firmware development',
+      'Improved device performance and user customization options',
+      'Collaborated on core Android OS components and system-level enhancements',
+    ],
+  },
 ]
 
 export default function Experience() {

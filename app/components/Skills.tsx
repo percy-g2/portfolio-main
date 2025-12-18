@@ -21,7 +21,7 @@ const skillCategories = [
   },
   {
     title: 'Web & Backend',
-    skills: ['Node.js', 'REST APIs', 'Angular', 'React.js', 'MongoDB', 'NanoHTTPD'],
+    skills: ['Node.js', 'Next.js', 'TypeScript', 'REST APIs', 'Angular', 'React.js', 'MongoDB', 'NanoHTTPD'],
   },
   {
     title: 'Blockchain & Cryptography',

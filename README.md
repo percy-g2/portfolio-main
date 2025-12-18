@@ -12,6 +12,8 @@ A modern, eye-catching portfolio website showcasing 11+ years of experience in m
 
 ## Getting Started
 
+**Note: Run Next.js locally first for development**
+
 1. Install dependencies:
 ```bash
 npm install
