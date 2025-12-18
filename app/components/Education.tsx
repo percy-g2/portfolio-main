@@ -12,7 +12,7 @@ const education = [
   },
   {
     institution: 'High School',
-    degree: 'Science Stream',
+    degree: 'Completed foundational education in Computer Science and core sciences at elite Kendriya Vidyalayas across India, associated with DRDO, ASC, BRD, and Indian Air Force establishments',
     period: '1998 – 2011',
     icon: FaSchool,
   },
