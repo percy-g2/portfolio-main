@@ -9,7 +9,7 @@ const skillCategories = [
   },
   {
     title: 'Mobile & Multiplatform',
-    skills: ['Android SDK', 'Jetpack Compose', 'Compose Multiplatform (CMP)', 'Kotlin Multiplatform (KMP/KMM)', 'React Native'],
+    skills: ['Android SDK', 'Jetpack Compose', 'Compose Multiplatform (CMP)', 'Kotlin Multiplatform (KMP/KMM)', 'React Native', 'Flutter'],
   },
   {
     title: 'Architecture & Design',
@@ -17,7 +17,7 @@ const skillCategories = [
   },
   {
     title: 'Frameworks & Libraries',
-    skills: ['Coroutines', 'RxJava', 'Android Architecture Components', 'Firebase', 'Ktor (Client & Server)', 'Google Play Services'],
+    skills: ['Coroutines', 'RxJava', 'Android Architecture Components', 'Firebase', 'Ktor (Client & Server)', 'Google Play Services', 'Open Telemetry', 'Sentry', 'Custom Framework'],
   },
   {
     title: 'Web & Backend',
