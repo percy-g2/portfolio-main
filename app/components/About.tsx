@@ -15,20 +15,68 @@ export default function About() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text text-center">
             About Me
           </h2>
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-            <p className="text-lg text-gray-300 leading-relaxed mb-4">
-              Senior Mobile Applications & Multiplatform Engineer with <span className="text-blue-400 font-semibold">11+ years</span> of experience 
-              in mobile app development, delivering high-performance Android, iOS, Desktop, and Web applications.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-4">
-              Proven expertise in <span className="text-purple-400 font-semibold">Kotlin Multiplatform</span>, 
-              <span className="text-purple-400 font-semibold"> Compose Multiplatform</span>, Android SDK, and cross-platform architecture. 
-              Strong background in fintech, blockchain, AI-driven systems, and enterprise-grade applications.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Adept at leading technical architecture, migrations, and scalable system design.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
+            whileHover={{ scale: 1.02, y: -5 }}
+            className="liquid-glass-strong rounded-2xl p-8 hover:border-blue-500/50 transition-all relative overflow-hidden group"
+          >
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-purple-600/0 to-pink-600/0 group-hover:from-blue-600/10 group-hover:via-purple-600/10 group-hover:to-pink-600/10 transition-all duration-500"
+            />
+            <div className="relative z-10">
+              <motion.p 
+                className="text-lg text-gray-300 leading-relaxed mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                Senior Mobile Applications & Multiplatform Engineer with{' '}
+                <motion.span 
+                  className="text-blue-400 font-semibold inline-block"
+                  whileHover={{ scale: 1.2, rotate: [0, -5, 5, 0] }}
+                >
+                  11+ years
+                </motion.span>
+                {' '}of experience in mobile app development, delivering high-performance Android, iOS, Desktop, and Web applications.
+              </motion.p>
+              <motion.p 
+                className="text-lg text-gray-300 leading-relaxed mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                Proven expertise in{' '}
+                <motion.span 
+                  className="text-purple-400 font-semibold inline-block"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  Kotlin Multiplatform
+                </motion.span>
+                ,{' '}
+                <motion.span 
+                  className="text-purple-400 font-semibold inline-block"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  Compose Multiplatform
+                </motion.span>
+                , Android SDK, and cross-platform architecture. Strong background in fintech, blockchain, AI-driven systems, and enterprise-grade applications.
+              </motion.p>
+              <motion.p 
+                className="text-lg text-gray-300 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                Adept at leading technical architecture, migrations, and scalable system design.
+              </motion.p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

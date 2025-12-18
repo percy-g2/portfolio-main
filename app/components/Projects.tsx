@@ -78,57 +78,96 @@ export default function Projects() {
             const Icon = project.icon
             const ProjectCard = (
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-pink-500 transition-all hover:scale-105 cursor-pointer h-full flex flex-col"
+                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ 
+                  delay: index * 0.1,
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 15
+                }}
+                whileHover={{ 
+                  y: -15,
+                  rotateY: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className="liquid-glass rounded-2xl p-6 hover:border-pink-500/50 transition-all cursor-pointer h-full flex flex-col relative overflow-hidden group"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-purple-600/0 via-pink-600/0 to-blue-600/0 group-hover:from-purple-600/20 group-hover:via-pink-600/20 group-hover:to-blue-600/20 transition-all duration-500"
+                />
+                <div className="flex items-center gap-4 mb-4 relative z-10">
+                  <motion.div 
+                    className="p-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg"
+                    whileHover={{ 
+                      rotate: [0, -10, 10, 0],
+                      scale: 1.1,
+                      transition: { duration: 0.5 }
+                    }}
+                  >
                     <Icon className="text-2xl text-white" />
-                  </div>
+                  </motion.div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                    <motion.h3 
+                      className="text-xl font-bold text-white"
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      {project.title}
+                    </motion.h3>
                     <p className="text-sm text-gray-400">{project.category}</p>
                   </div>
                   {project.link && (
-                    <a
+                    <motion.a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       className="text-gray-400 hover:text-white transition-colors"
+                      whileHover={{ rotate: 360, scale: 1.2 }}
+                      transition={{ duration: 0.5 }}
                     >
                       <FaGithub className="text-xl" />
-                    </a>
+                    </motion.a>
                   )}
                 </div>
-                <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
+                <p className="text-gray-300 mb-4 flex-1 relative z-10">{project.description}</p>
                 {project.technologies && (
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  <div className="flex flex-wrap gap-2 mt-4 relative z-10">
                     {project.technologies.map((tech, i) => (
-                      <span
+                      <motion.span
                         key={i}
-                        className="px-2 py-1 bg-gray-700/50 rounded text-xs text-gray-300"
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 + i * 0.05 }}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        className="px-2 py-1 bg-gray-700/50 rounded text-xs text-gray-300 hover:bg-gray-600/50 transition-colors"
                       >
                         {tech}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 )}
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
               </motion.div>
             )
             return project.link ? (
-              <a
+              <motion.a
                 key={project.title}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
+                whileTap={{ scale: 0.95 }}
               >
                 {ProjectCard}
-              </a>
+              </motion.a>
             ) : (
               <div key={project.title}>{ProjectCard}</div>
             )
@@ -151,40 +190,81 @@ export default function Projects() {
         </motion.div>
         
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ delay: 0.3, type: 'spring', stiffness: 100 }}
+          whileHover={{ scale: 1.01 }}
           className="mt-12"
         >
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-6">Open Source Contributions</h3>
-            <div className="space-y-4">
-              <div>
-                <h4 className="text-lg font-semibold text-purple-400 mb-2">CyanogenMod / LineageOS</h4>
-                <p className="text-gray-300">
-                  Recognized contributor to <span className="text-purple-400 font-semibold">CyanogenMod</span> and{' '}
-                  <span className="text-purple-400 font-semibold">LineageOS</span>, collaborating on core Android OS components, 
-                  device-specific optimizations, and custom firmware development. Contributed to improving device performance 
-                  and user customization options across multiple device manufacturers.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-blue-400 mb-2">Embedded Systems & IoT</h4>
-                <p className="text-gray-300">
-                  Built custom tooling and firmware for <span className="text-blue-400 font-semibold">BeagleBone</span> and{' '}
-                  <span className="text-blue-400 font-semibold">Raspberry Pi</span> platforms, enabling innovative IoT solutions 
-                  and embedded system development.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-green-400 mb-2">Blockchain & Privacy</h4>
-                <p className="text-gray-300">
-                  Active contributor to privacy-focused blockchain projects, including Bitcoin CoinJoin implementations and 
-                  Nostr protocol integrations. Passionate about financial privacy and decentralized technologies.
-                </p>
-              </div>
+          <motion.div 
+            className="liquid-glass-strong rounded-2xl p-8 hover:border-purple-500/50 transition-all relative overflow-hidden group"
+            whileHover={{ y: -5 }}
+          >
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-pink-600/0 to-blue-600/0 group-hover:from-purple-600/10 group-hover:via-pink-600/10 group-hover:to-blue-600/10 transition-all duration-500"
+            />
+            <motion.h3 
+              className="text-2xl font-bold text-white mb-6 relative z-10"
+              whileHover={{ scale: 1.05 }}
+            >
+              Open Source Contributions
+            </motion.h3>
+            <div className="space-y-4 relative z-10">
+              {[
+                {
+                  title: 'CyanogenMod / LineageOS',
+                  color: 'text-purple-400',
+                  highlights: ['CyanogenMod', 'LineageOS'],
+                  description: 'Recognized contributor to CyanogenMod and LineageOS, collaborating on core Android OS components, device-specific optimizations, and custom firmware development. Contributed to improving device performance and user customization options across multiple device manufacturers.',
+                },
+                {
+                  title: 'Embedded Systems & IoT',
+                  color: 'text-blue-400',
+                  highlights: ['BeagleBone', 'Raspberry Pi'],
+                  description: 'Built custom tooling and firmware for BeagleBone and Raspberry Pi platforms, enabling innovative IoT solutions and embedded system development.',
+                },
+                {
+                  title: 'Blockchain & Privacy',
+                  color: 'text-green-400',
+                  highlights: [],
+                  description: 'Active contributor to privacy-focused blockchain projects, including Bitcoin CoinJoin implementations and Nostr protocol integrations. Passionate about financial privacy and decentralized technologies.',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  whileHover={{ x: 10 }}
+                >
+                  <motion.h4 
+                    className={`text-lg font-semibold ${item.color} mb-2`}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {item.title}
+                  </motion.h4>
+                  <p className="text-gray-300">
+                    {item.description.split(' ').map((word, i) => {
+                      const isHighlight = item.highlights.some(h => word.includes(h))
+                      return isHighlight ? (
+                        <motion.span
+                          key={i}
+                          className={`${item.color} font-semibold inline-block`}
+                          whileHover={{ scale: 1.2, rotate: [0, -5, 5, 0] }}
+                        >
+                          {word}{' '}
+                        </motion.span>
+                      ) : (
+                        <span key={i}>{word} </span>
+                      )
+                    })}
+                  </p>
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

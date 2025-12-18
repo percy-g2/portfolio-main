@@ -76,22 +76,50 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-blue-500 transition-all"
+              initial={{ opacity: 0, scale: 0.8, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ 
+                delay: index * 0.1,
+                type: 'spring',
+                stiffness: 100,
+                damping: 15
+              }}
+              whileHover={{ 
+                scale: 1.05, 
+                y: -10,
+                rotateY: 5,
+                transition: { duration: 0.3 }
+              }}
+              className="liquid-glass rounded-2xl p-6 hover:border-blue-500/50 transition-all relative overflow-hidden group"
             >
-              <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-purple-600/0 to-pink-600/0 group-hover:from-blue-600/10 group-hover:via-purple-600/10 group-hover:to-pink-600/10 transition-all duration-500"
+              />
+              <motion.h3 
+                className="text-xl font-bold text-white mb-4 relative z-10"
+                whileHover={{ scale: 1.05 }}
+              >
+                {category.title}
+              </motion.h3>
+              <div className="flex flex-wrap gap-2 relative z-10">
                 {category.skills.map((skill, i) => (
                   <motion.span
                     key={i}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + i * 0.05 }}
-                    className="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-sm text-white"
+                    transition={{ 
+                      delay: index * 0.1 + i * 0.03,
+                      type: 'spring',
+                      stiffness: 200
+                    }}
+                    whileHover={{ 
+                      scale: 1.1, 
+                      rotate: [0, -5, 5, 0],
+                      transition: { duration: 0.3 }
+                    }}
+                    className="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-sm text-white cursor-default shadow-lg hover:shadow-blue-500/50 transition-shadow"
                   >
                     {skill}
                   </motion.span>

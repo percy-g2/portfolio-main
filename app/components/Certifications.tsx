@@ -30,33 +30,89 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-yellow-500 transition-all"
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ 
+                delay: index * 0.2,
+                type: 'spring',
+                stiffness: 100,
+                damping: 15
+              }}
+              whileHover={{ 
+                y: -10,
+                scale: 1.02,
+                rotateY: 5,
+                transition: { duration: 0.3 }
+              }}
+              className="liquid-glass rounded-2xl p-6 hover:border-yellow-500/50 transition-all relative overflow-hidden group"
             >
-              <div className="flex items-start gap-4">
-                <div className="mt-1">
-                  <div className="p-3 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-lg">
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-yellow-600/0 via-orange-600/0 to-amber-600/0 group-hover:from-yellow-600/20 group-hover:via-orange-600/20 group-hover:to-amber-600/20 transition-all duration-500"
+              />
+              <div className="flex items-start gap-4 relative z-10">
+                <motion.div 
+                  className="mt-1"
+                  whileHover={{ 
+                    rotate: [0, -20, 20, 0],
+                    scale: 1.2,
+                    transition: { duration: 0.6 }
+                  }}
+                >
+                  <motion.div 
+                    className="p-3 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-lg shadow-lg"
+                    animate={{
+                      boxShadow: [
+                        '0 4px 6px rgba(234, 179, 8, 0.3)',
+                        '0 8px 16px rgba(234, 179, 8, 0.5)',
+                        '0 4px 6px rgba(234, 179, 8, 0.3)',
+                      ],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    }}
+                  >
                     <FaCertificate className="text-2xl text-white" />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-white mb-1">{cert.name}</h3>
-                  <p className="text-lg text-yellow-400 mb-2">{cert.issuer}</p>
+                  <motion.h3 
+                    className="text-2xl font-bold text-white mb-1"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {cert.name}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-lg text-yellow-400 mb-2"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {cert.issuer}
+                  </motion.p>
                   <p className="text-gray-400 mb-3">{cert.description}</p>
                   <p className="text-sm text-gray-500 mb-4">Issued: {cert.period}</p>
                   {cert.link && (
-                    <a
+                    <motion.a
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
+                      whileHover={{ scale: 1.1, x: 5 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       <span>View Certificate</span>
-                      <FaExternalLinkAlt className="text-sm" />
-                    </a>
+                      <motion.span
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ 
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: 'easeInOut'
+                        }}
+                      >
+                        <FaExternalLinkAlt className="text-sm" />
+                      </motion.span>
+                    </motion.a>
                   )}
                 </div>
               </div>
