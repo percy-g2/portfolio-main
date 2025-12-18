@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export default function Contact() {
   return (
@@ -63,6 +63,19 @@ export default function Contact() {
               <div>
                 <p className="text-gray-400 text-sm">GitHub</p>
                 <p className="text-white font-semibold">percy-g2</p>
+              </div>
+            </a>
+            
+            <a
+              href="https://www.linkedin.com/in/prashant-gahlot-37914988/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 bg-gray-700/50 rounded-lg hover:bg-gray-700 transition-all hover:scale-105"
+            >
+              <FaLinkedin className="text-3xl text-blue-500" />
+              <div>
+                <p className="text-gray-400 text-sm">LinkedIn</p>
+                <p className="text-white font-semibold">Prashant Gahlot</p>
               </div>
             </a>
           </div>

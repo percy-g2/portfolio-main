@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { FaGithub, FaEnvelope, FaPhone, FaLinkedin } from 'react-icons/fa'
 
 export default function Hero() {
   return (
@@ -83,6 +83,15 @@ export default function Hero() {
             >
               <FaPhone className="text-xl" />
               <span>+91 81470 57040</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/prashant-gahlot-37914988/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105"
+            >
+              <FaLinkedin className="text-xl" />
+              <span>LinkedIn</span>
             </a>
           </motion.div>
         </motion.div>
