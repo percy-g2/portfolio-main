@@ -58,9 +58,9 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Enhanced animated background with floating orbs */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-10 left-4 sm:top-20 sm:left-20 w-48 h-48 sm:w-72 sm:h-72 bg-purple-500/20 rounded-full blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
@@ -73,7 +73,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+          className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-64 h-64 sm:w-96 sm:h-96 bg-blue-500/20 rounded-full blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, -60, 0],
@@ -86,7 +86,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-pink-500/20 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 w-40 h-40 sm:w-64 sm:h-64 bg-pink-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
           animate={{
             x: [0, 50, 0],
             y: [0, -50, 0],
@@ -100,7 +100,7 @@ export default function Hero() {
         />
       </div>
       
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 sm:px-6 z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -109,7 +109,7 @@ export default function Hero() {
         >
           <motion.div
             variants={itemVariants}
-            className="mb-8 flex justify-center relative"
+            className="mb-6 sm:mb-8 flex justify-center relative"
           >
             <motion.div
               variants={floatingVariants}
@@ -124,7 +124,7 @@ export default function Hero() {
               <motion.img
                 src="https://github.com/percy-g2.png"
                 alt="Prashant Gahlot"
-                className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-500/50 shadow-2xl object-cover relative z-10 backdrop-blur-sm"
+                className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-500/50 shadow-2xl object-cover relative z-10 backdrop-blur-sm"
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 transition={{ type: 'spring', stiffness: 300 }}
                 style={{ cursor: 'default' }}
@@ -146,7 +146,7 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-6xl md:text-8xl font-bold mb-6 gradient-text"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 gradient-text px-2"
           >
             <motion.span
               initial={{ opacity: 0, y: 50 }}
@@ -167,21 +167,21 @@ export default function Hero() {
           
           <motion.p
             variants={itemVariants}
-            className="text-2xl md:text-3xl text-gray-300 mb-4"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-3 sm:mb-4 px-4"
           >
-            Senior Mobile & Multiplatform Engineer
+           Mobile Engineer and AI Architect
           </motion.p>
           
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-400 mb-8"
+            className="text-sm sm:text-base md:text-lg text-gray-400 mb-6 sm:mb-8 px-4"
           >
-            11+ Years in Mobile App Development | Kotlin Multiplatform Expert
+            11+ Years in Mobile App Development | OS Developer | AI Architect | UI/UX Expert 
           </motion.p>
           
           <motion.div
             variants={itemVariants}
-            className="flex justify-center gap-6 flex-wrap"
+            className="flex justify-center gap-3 sm:gap-4 md:gap-6 flex-wrap px-4"
           >
             {[
               { icon: FaGithub, href: 'https://github.com/percy-g2', label: 'GitHub', color: 'from-gray-600 to-gray-800' },
@@ -196,7 +196,7 @@ export default function Hero() {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${item.color} rounded-lg relative overflow-hidden group liquid-glass-subtle`}
+                  className={`flex items-center gap-2 px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 bg-gradient-to-r ${item.color} rounded-lg relative overflow-hidden group liquid-glass-subtle text-sm sm:text-base`}
                   whileHover={{ scale: 1.1, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -205,7 +205,8 @@ export default function Hero() {
                   style={{ 
                     cursor: 'pointer',
                     WebkitTapHighlightColor: 'transparent',
-                    userSelect: 'none'
+                    userSelect: 'none',
+                    minHeight: '44px' // Better touch target
                   }}
                 >
                   <motion.div
@@ -215,8 +216,8 @@ export default function Hero() {
                     transition={{ duration: 0.5 }}
                     style={{ pointerEvents: 'none' }}
                   />
-                  <Icon className="text-xl relative z-10 pointer-events-none" />
-                  <span className="relative z-10 font-semibold pointer-events-none">{item.label}</span>
+                  <Icon className="text-lg sm:text-xl relative z-10 pointer-events-none" />
+                  <span className="relative z-10 font-semibold pointer-events-none whitespace-nowrap">{item.label}</span>
                 </motion.a>
               )
             })}
@@ -229,19 +230,19 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2"
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         style={{ cursor: 'pointer' }}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-6 h-10 border-2 border-purple-400/50 rounded-full flex justify-center relative liquid-glass-subtle"
+          className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-purple-400/50 rounded-full flex justify-center relative liquid-glass-subtle"
         >
           <motion.div
             animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1.5 h-3 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full mt-2"
+            className="w-1 h-2 sm:w-1.5 sm:h-3 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full mt-1.5 sm:mt-2"
           />
         </motion.div>
       </motion.div>

@@ -20,18 +20,18 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 px-4">
+    <section id="education" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 gradient-text text-center px-2"
         >
           Education
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
           {education.map((edu, index) => {
             const Icon = edu.icon
             return (
@@ -52,14 +52,14 @@ export default function Education() {
                   scale: 1.02,
                   transition: { duration: 0.3 }
                 }}
-                className="liquid-glass rounded-2xl p-6 hover:border-green-500/50 transition-all relative overflow-hidden group"
+                className="liquid-glass rounded-2xl p-4 sm:p-5 md:p-6 hover:border-green-500/50 transition-all relative overflow-hidden group"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-green-600/0 via-teal-600/0 to-emerald-600/0 group-hover:from-green-600/20 group-hover:via-teal-600/20 group-hover:to-emerald-600/20 transition-all duration-500"
                 />
-                <div className="flex items-start gap-4 relative z-10">
+                <div className="flex items-start gap-3 sm:gap-4 relative z-10">
                   <motion.div 
-                    className="mt-1"
+                    className="mt-1 flex-shrink-0"
                     whileHover={{ 
                       rotate: [0, -15, 15, 0],
                       scale: 1.1,
@@ -67,7 +67,7 @@ export default function Education() {
                     }}
                   >
                     <motion.div 
-                      className="p-3 bg-gradient-to-br from-green-600 to-teal-600 rounded-lg shadow-lg"
+                      className="p-2 sm:p-3 bg-gradient-to-br from-green-600 to-teal-600 rounded-lg shadow-lg"
                       animate={{
                         boxShadow: [
                           '0 4px 6px rgba(5, 150, 105, 0.3)',
@@ -81,23 +81,23 @@ export default function Education() {
                         ease: 'easeInOut',
                       }}
                     >
-                      <Icon className="text-2xl text-white" />
+                      <Icon className="text-lg sm:text-xl md:text-2xl text-white" />
                     </motion.div>
                   </motion.div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <motion.h3 
-                      className="text-xl font-bold text-white mb-1"
+                      className="text-base sm:text-lg md:text-xl font-bold text-white mb-1"
                       whileHover={{ scale: 1.05 }}
                     >
                       {edu.degree}
                     </motion.h3>
                     <motion.p 
-                      className="text-lg text-green-400 mb-2"
+                      className="text-sm sm:text-base md:text-lg text-green-400 mb-1 sm:mb-2"
                       whileHover={{ scale: 1.05 }}
                     >
                       {edu.institution}
                     </motion.p>
-                    <p className="text-gray-400">{edu.period}</p>
+                    <p className="text-xs sm:text-sm text-gray-400">{edu.period}</p>
                   </div>
                 </div>
               </motion.div>

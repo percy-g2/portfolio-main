@@ -62,18 +62,18 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 bg-gray-900/50">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-900/50">
       <div className="container mx-auto max-w-6xl">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-10 md:mb-12 gradient-text text-center px-2"
         >
           Notable Projects
         </motion.h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {projects.map((project, index) => {
             const Icon = project.icon
             const ProjectCard = (
@@ -92,30 +92,30 @@ export default function Projects() {
                   rotateY: 5,
                   transition: { duration: 0.3 }
                 }}
-                className="liquid-glass rounded-2xl p-6 hover:border-pink-500/50 transition-all cursor-pointer h-full flex flex-col relative overflow-hidden group"
+                className="liquid-glass rounded-2xl p-4 sm:p-5 md:p-6 hover:border-pink-500/50 transition-all cursor-pointer h-full flex flex-col relative overflow-hidden group"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-br from-purple-600/0 via-pink-600/0 to-blue-600/0 group-hover:from-purple-600/20 group-hover:via-pink-600/20 group-hover:to-blue-600/20 transition-all duration-500"
                 />
-                <div className="flex items-center gap-4 mb-4 relative z-10">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4 relative z-10">
                   <motion.div 
-                    className="p-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg"
+                    className="p-2 sm:p-3 bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg flex-shrink-0"
                     whileHover={{ 
                       rotate: [0, -10, 10, 0],
                       scale: 1.1,
                       transition: { duration: 0.5 }
                     }}
                   >
-                    <Icon className="text-2xl text-white" />
+                    <Icon className="text-lg sm:text-xl md:text-2xl text-white" />
                   </motion.div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <motion.h3 
-                      className="text-xl font-bold text-white"
+                      className="text-base sm:text-lg md:text-xl font-bold text-white truncate"
                       whileHover={{ scale: 1.05 }}
                     >
                       {project.title}
                     </motion.h3>
-                    <p className="text-sm text-gray-400">{project.category}</p>
+                    <p className="text-xs sm:text-sm text-gray-400 truncate">{project.category}</p>
                   </div>
                   {project.link && (
                     <motion.a
@@ -123,17 +123,18 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
                       whileHover={{ rotate: 360, scale: 1.2 }}
                       transition={{ duration: 0.5 }}
+                      style={{ minWidth: '24px', minHeight: '24px' }}
                     >
-                      <FaGithub className="text-xl" />
+                      <FaGithub className="text-lg sm:text-xl" />
                     </motion.a>
                   )}
                 </div>
-                <p className="text-gray-300 mb-4 flex-1 relative z-10">{project.description}</p>
+                <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4 flex-1 relative z-10">{project.description}</p>
                 {project.technologies && (
-                  <div className="flex flex-wrap gap-2 mt-4 relative z-10">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4 relative z-10">
                     {project.technologies.map((tech, i) => (
                       <motion.span
                         key={i}
@@ -142,7 +143,7 @@ export default function Projects() {
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 + i * 0.05 }}
                         whileHover={{ scale: 1.1, y: -2 }}
-                        className="px-2 py-1 bg-gray-700/50 rounded text-xs text-gray-300 hover:bg-gray-600/50 transition-colors"
+                        className="px-2 py-0.5 sm:py-1 bg-gray-700/50 rounded text-xs text-gray-300 hover:bg-gray-600/50 transition-colors"
                       >
                         {tech}
                       </motion.span>
@@ -179,9 +180,9 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-12 text-center"
+          className="mt-8 sm:mt-10 md:mt-12 text-center px-2"
         >
-          <p className="text-gray-400 text-lg italic max-w-3xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg italic max-w-3xl mx-auto">
             With over <span className="text-purple-400 font-semibold">100+ repositories</span> spanning diverse domains, 
             I've curated a selection of my most impactful work here. Each project represents a unique challenge solved, 
             a new technology mastered, or an idea brought to life. While this showcase highlights the cream of the crop, 
@@ -195,22 +196,22 @@ export default function Projects() {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ delay: 0.3, type: 'spring', stiffness: 100 }}
           whileHover={{ scale: 1.01 }}
-          className="mt-12"
+          className="mt-8 sm:mt-10 md:mt-12"
         >
           <motion.div 
-            className="liquid-glass-strong rounded-2xl p-8 hover:border-purple-500/50 transition-all relative overflow-hidden group"
+            className="liquid-glass-strong rounded-2xl p-5 sm:p-6 md:p-8 hover:border-purple-500/50 transition-all relative overflow-hidden group"
             whileHover={{ y: -5 }}
           >
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-pink-600/0 to-blue-600/0 group-hover:from-purple-600/10 group-hover:via-pink-600/10 group-hover:to-blue-600/10 transition-all duration-500"
             />
             <motion.h3 
-              className="text-2xl font-bold text-white mb-6 relative z-10"
+              className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 relative z-10"
               whileHover={{ scale: 1.05 }}
             >
               Open Source Contributions
             </motion.h3>
-            <div className="space-y-4 relative z-10">
+            <div className="space-y-3 sm:space-y-4 relative z-10">
               {[
                 {
                   title: 'CyanogenMod / LineageOS',
@@ -240,12 +241,12 @@ export default function Projects() {
                   whileHover={{ x: 10 }}
                 >
                   <motion.h4 
-                    className={`text-lg font-semibold ${item.color} mb-2`}
+                    className={`text-base sm:text-lg font-semibold ${item.color} mb-1 sm:mb-2`}
                     whileHover={{ scale: 1.05 }}
                   >
                     {item.title}
                   </motion.h4>
-                  <p className="text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300">
                     {item.description.split(' ').map((word, i) => {
                       const isHighlight = item.highlights.some(h => word.includes(h))
                       return isHighlight ? (

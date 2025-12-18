@@ -41,7 +41,7 @@ function CompanyLogo({ company, className = '' }: { company: string, className?:
 
   return (
     <motion.div
-      className={`w-10 h-10 rounded-lg bg-gradient-to-br ${getGradient(company)} flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:shadow-xl transition-all ${className}`}
+      className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${getGradient(company)} flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-lg group-hover:shadow-xl transition-all ${className}`}
       whileHover={{ scale: 1.1, rotate: 5 }}
       transition={{ duration: 0.3 }}
     >
@@ -137,28 +137,28 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-4 bg-gray-900/50">
+    <section id="experience" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-900/50">
       <div className="container mx-auto max-w-6xl">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 gradient-text text-center px-2"
         >
           Professional Experience
         </motion.h2>
         
         <div className="relative">
-          {/* Timeline line */}
+          {/* Timeline line - hidden on mobile, visible on md+ */}
           <motion.div
-            className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500"
+            className="hidden md:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-blue-500"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut' }}
           />
           
-          <div className="space-y-8 relative">
+          <div className="space-y-6 sm:space-y-8 relative">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -176,11 +176,11 @@ export default function Experience() {
                   scale: 1.02,
                   transition: { duration: 0.3 }
                 }}
-                className="liquid-glass rounded-2xl p-6 hover:border-purple-500/50 transition-all relative ml-16 group"
+                className="liquid-glass rounded-2xl p-4 sm:p-5 md:p-6 hover:border-purple-500/50 transition-all relative md:ml-16 group"
               >
-                {/* Timeline dot */}
+                {/* Timeline dot - hidden on mobile, visible on md+ */}
                 <motion.div
-                  className="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-4 border-gray-900 shadow-lg"
+                  className="hidden md:block absolute -left-12 top-6 w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full border-4 border-gray-900 shadow-lg"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -192,21 +192,21 @@ export default function Experience() {
                   className="absolute inset-0 bg-gradient-to-r from-purple-600/0 to-pink-600/0 group-hover:from-purple-600/10 group-hover:to-pink-600/10 rounded-2xl transition-all duration-500"
                 />
                 
-                <div className="flex items-start gap-4 relative z-10">
+                <div className="flex items-start gap-3 sm:gap-4 relative z-10">
                   <div className="mt-1 flex-shrink-0 group/icon">
-                    <CompanyLogo company={exp.company} />
+                    <CompanyLogo company={exp.company} className="w-8 h-8 sm:w-10 sm:h-10" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-2xl font-bold text-white mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-1 group-hover:scale-105 transition-transform duration-300 origin-left">
                       {exp.company}
                     </h3>
-                    <p className="text-xl text-purple-400 mb-2">{exp.role}</p>
-                    <p className="text-gray-400 mb-4">{exp.period}</p>
-                    <ul className="space-y-2">
+                    <p className="text-base sm:text-lg md:text-xl text-purple-400 mb-1 sm:mb-2">{exp.role}</p>
+                    <p className="text-sm sm:text-base text-gray-400 mb-3 sm:mb-4">{exp.period}</p>
+                    <ul className="space-y-1.5 sm:space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <motion.li 
                           key={i} 
-                          className="text-gray-300 flex items-start gap-2"
+                          className="text-sm sm:text-base text-gray-300 flex items-start gap-2"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
@@ -214,7 +214,7 @@ export default function Experience() {
                           whileHover={{ x: 5, color: '#e9d5ff' }}
                         >
                           <motion.span 
-                            className="text-purple-400 mt-1"
+                            className="text-purple-400 mt-1 flex-shrink-0"
                             animate={{ rotate: [0, 10, 0] }}
                             transition={{ 
                               duration: 2,

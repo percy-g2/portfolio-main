@@ -51,13 +51,13 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4">
+    <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-4 gradient-text text-center"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 gradient-text text-center px-2"
         >
           Core Skills
         </motion.h2>
@@ -67,12 +67,12 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-gray-400 text-center text-lg mb-12 max-w-3xl mx-auto italic"
+          className="text-gray-400 text-center text-sm sm:text-base md:text-lg mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto italic px-2"
         >
           This is an overview of my key technical skills. I have extensive experience with many more technologies and tools across various domains.
         </motion.p>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
@@ -91,18 +91,18 @@ export default function Skills() {
                 rotateY: 5,
                 transition: { duration: 0.3 }
               }}
-              className="liquid-glass rounded-2xl p-6 hover:border-blue-500/50 transition-all relative overflow-hidden group"
+              className="liquid-glass rounded-2xl p-4 sm:p-5 md:p-6 hover:border-blue-500/50 transition-all relative overflow-hidden group"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-purple-600/0 to-pink-600/0 group-hover:from-blue-600/10 group-hover:via-purple-600/10 group-hover:to-pink-600/10 transition-all duration-500"
               />
               <motion.h3 
-                className="text-xl font-bold text-white mb-4 relative z-10"
+                className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 relative z-10"
                 whileHover={{ scale: 1.05 }}
               >
                 {category.title}
               </motion.h3>
-              <div className="flex flex-wrap gap-2 relative z-10">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 relative z-10">
                 {category.skills.map((skill, i) => (
                   <motion.span
                     key={i}
@@ -119,7 +119,7 @@ export default function Skills() {
                       rotate: [0, -5, 5, 0],
                       transition: { duration: 0.3 }
                     }}
-                    className="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-sm text-white cursor-default shadow-lg hover:shadow-blue-500/50 transition-shadow"
+                    className="px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-xs sm:text-sm text-white cursor-default shadow-lg hover:shadow-blue-500/50 transition-shadow"
                   >
                     {skill}
                   </motion.span>

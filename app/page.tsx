@@ -29,9 +29,9 @@ export default function Home() {
       initial="hidden"
       animate="visible"
     >
-      {/* Animated background particles */}
+      {/* Animated background particles - reduced on mobile for performance */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => {
+        {[...Array(10)].map((_, i) => {
           const randomX = Math.random() * 100
           const randomY = Math.random() * 100
           const randomDuration = Math.random() * 10 + 10
@@ -41,14 +41,14 @@ export default function Home() {
           return (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-purple-400/30 rounded-full"
+              className="absolute w-0.5 h-0.5 sm:w-1 sm:h-1 bg-purple-400/20 sm:bg-purple-400/30 rounded-full"
               initial={{
                 x: `${randomX}vw`,
                 y: `${randomY}vh`,
               }}
               animate={{
                 y: [`${randomY}vh`, `${randomEndY}vh`],
-                opacity: [0.3, 0.7, 0.3],
+                opacity: [0.2, 0.5, 0.2],
               }}
               transition={{
                 duration: randomDuration,
