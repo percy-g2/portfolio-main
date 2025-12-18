@@ -5,9 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Uncomment and update if your GitHub repo name is different:
-  // basePath: '/your-repo-name',
-  // trailingSlash: true,
+  basePath: '/portfolio-main',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
