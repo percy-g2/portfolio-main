@@ -5,23 +5,43 @@ import { motion } from 'framer-motion'
 const skillCategories = [
   {
     title: 'Programming Languages',
-    skills: ['Kotlin', 'Java', 'Swift / SwiftUI', 'JavaScript (ES6+)', 'C++', 'C#'],
+    skills: ['Kotlin', 'Java', 'Swift', 'SwiftUI', 'JavaScript (ES6+)', 'C++', 'C#'],
   },
   {
     title: 'Mobile & Multiplatform',
-    skills: ['Android SDK', 'Jetpack Compose', 'Compose Multiplatform (CMP)', 'Kotlin Multiplatform (KMP/KMM)', 'React Native', 'Flutter'],
+    skills: ['Android SDK', 'Jetpack Compose', 'Compose Multiplatform (CMP)', 'Kotlin Multiplatform (KMP/KMM)', 'React Native', 'Flutter', 'iOS/mac/iPad App Development', 'UIKit', 'TestFlight (iOS)'],
   },
   {
     title: 'Architecture & Design',
-    skills: ['MVVM', 'MVI', 'Clean Architecture', 'Modular Design', 'Dependency Injection'],
+    skills: ['MVVM', 'MVI', 'Clean Architecture', 'Modular Design', 'Dependency Injection', 'OOPS'],
   },
   {
     title: 'Frameworks & Libraries',
-    skills: ['Coroutines', 'RxJava', 'Android Architecture Components', 'Firebase', 'Ktor (Client & Server)', 'Google Play Services', 'Open Telemetry', 'Sentry', 'Custom Framework'],
+    skills: ['Coroutines', 'RxJava', 'Android Architecture Components', 'Firebase', 'Ktor (Client & Server)', 'Google Play Services', 'Open Telemetry', 'Sentry', 'Custom Framework', 'Analytics Custom Libraries', 'Authentication', 'Cloud Messaging (Push Notifications)', 'Crashlytics', 'Redux / MobX', 'Riverpod / Bloc / Provider', 'Lottie', 'Shimmer', 'Framer Motion (RN)'],
+  },
+  {
+    title: 'Databases',
+    skills: ['Room DB', 'SQLite', 'MongoDB', 'Firestore', 'Realtime DB'],
   },
   {
     title: 'Web & Backend',
-    skills: ['Node.js', 'Next.js', 'TypeScript', 'REST APIs', 'Angular', 'React.js', 'MongoDB', 'NanoHTTPD'],
+    skills: ['Node.js', 'Next.js', 'TypeScript', 'REST APIs', 'Angular', 'React.js', 'NanoHTTPD'],
+  },
+  {
+    title: 'DevOps & Tools',
+    skills: ['Git', 'Gerrit', 'Jenkins', 'DevOps', 'Confluence', 'Jira', 'Fastlane', 'GitHub Actions', 'Bitrise', 'CircleCI'],
+  },
+  {
+    title: 'AI & Machine Learning',
+    skills: ['AI Agents', 'AI Architecture'],
+  },
+  {
+    title: 'Design & UX',
+    skills: ['UX Research', 'Material Design Components'],
+  },
+  {
+    title: 'Systems & Embedded',
+    skills: ['Embedded Operating System'],
   },
   {
     title: 'Blockchain & Cryptography',
@@ -37,10 +57,20 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center"
+          className="text-4xl md:text-5xl font-bold mb-4 gradient-text text-center"
         >
           Core Skills
         </motion.h2>
+        
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="text-gray-400 text-center text-lg mb-12 max-w-3xl mx-auto italic"
+        >
+          This is an overview of my key technical skills. I have extensive experience with many more technologies and tools across various domains.
+        </motion.p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
