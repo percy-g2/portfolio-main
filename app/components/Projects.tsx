@@ -136,6 +136,21 @@ export default function Projects() {
         </div>
         
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-gray-400 text-lg italic max-w-3xl mx-auto">
+            With over <span className="text-purple-400 font-semibold">100+ repositories</span> spanning diverse domains, 
+            I've curated a selection of my most impactful work here. Each project represents a unique challenge solved, 
+            a new technology mastered, or an idea brought to life. While this showcase highlights the cream of the crop, 
+            there's a treasure trove of innovation waiting to be explored in my GitHub universe.
+          </p>
+        </motion.div>
+        
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
