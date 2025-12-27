@@ -7,9 +7,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Prashant Gahlot | Senior Mobile & Multiplatform Engineer',
   description: '11+ years of experience in Android, iOS, Desktop, and Web applications. Kotlin Multiplatform expert.',
-  icons: {
-    icon: '/icon.png',
-  },
 }
 
 export const viewport: Viewport = {
