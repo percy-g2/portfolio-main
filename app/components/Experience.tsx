@@ -108,9 +108,11 @@ const experiences = [
     role: 'Senior Developer',
     period: '2013 – 2014',
     achievements: [
-      'Addressed core-level bug fixes for various Android devices',
+      'Addressed kernel-level bug fixes and device driver issues for various Android devices',
+      'Developed and optimized Android kernels for Motorola and Samsung devices',
+      'Performed low-level system debugging, kernel profiling, and performance tuning',
+      'Contributed to custom ROM development with kernel modifications and device-specific optimizations',
       'Ensured optimal performance and user experience across multiple device manufacturers',
-      'Contributed to custom ROM development and device optimization',
     ],
   },
   {
@@ -128,9 +130,13 @@ const experiences = [
     role: 'Software Developer',
     period: '2011 – 2012',
     achievements: [
-      'Contributed to custom Android firmware development',
-      'Improved device performance and user customization options',
-      'Collaborated on core Android OS components and system-level enhancements',
+      'Developed Android kernel for Motorola MSM8610 platform with 348,724+ commits',
+      'Implemented kernel architecture components, device drivers, and filesystem modules',
+      'Contributed to GNU kernel development for Samsung Galaxy Y (GT-S5360)',
+      'Collaborated on core Android OS components, bootloader, and firmware development',
+      'Performed kernel-level optimizations and device-specific customizations',
+      'Active contributor to Legacy-Xperia, AndroidOpenSourceXperia, and Motorola-CyanogenMod organizations',
+      'Improved device performance and user customization options through kernel modifications',
     ],
   },
 ]

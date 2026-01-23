@@ -64,7 +64,21 @@ export default function About() {
                 >
                   Compose Multiplatform
                 </motion.span>
-                , SwiftUI, UIKit, Jetpack Compose, Dart, Android SDK, and cross-platform architecture. Strong background in fintech, blockchain, AI-driven systems, and enterprise-grade applications.
+                , SwiftUI, UIKit, Jetpack Compose, Dart, Android SDK, and cross-platform architecture. Deep systems-level expertise in{' '}
+                <motion.span 
+                  className="text-blue-400 font-semibold inline-block"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  Linux kernel development
+                </motion.span>
+                {' '}and{' '}
+                <motion.span 
+                  className="text-blue-400 font-semibold inline-block"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  Android OS modifications
+                </motion.span>
+                , with extensive contributions to CyanogenMod/LineageOS and custom ROM development. Strong background in fintech, blockchain, AI-driven systems, and enterprise-grade applications.
               </motion.p>
               <motion.p 
                 className="text-base sm:text-lg text-gray-300 leading-relaxed"

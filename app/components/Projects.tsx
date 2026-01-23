@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaCode, FaBitcoin, FaExchangeAlt, FaGraduationCap, FaShieldAlt, FaRobot, FaGithub } from 'react-icons/fa'
+import { FaCode, FaBitcoin, FaExchangeAlt, FaGraduationCap, FaShieldAlt, FaRobot, FaGithub, FaMicrochip, FaCog } from 'react-icons/fa'
 
 const projects = [
   {
@@ -57,6 +57,22 @@ const projects = [
     category: 'Open Source',
     link: 'https://github.com/guardianproject/haven',
     technologies: ['Android', 'Security', 'Privacy'],
+  },
+  {
+    title: 'Android Kernel Motorola MSM8610',
+    description: 'Comprehensive Android kernel development for Motorola MSM8610 platform. Features 348,724+ commits with core kernel components including architecture files, device drivers, filesystem modules, crypto subsystems, and CyanogenMod 12.1 integration. Low-level system programming enabling custom ROM support and device-specific optimizations.',
+    icon: FaMicrochip,
+    category: 'Kernel & OS Development',
+    link: 'https://github.com/percy-g2/android_kernel_motorola_msm8610',
+    technologies: ['C', 'Linux Kernel', 'Android Kernel', 'Device Drivers', 'ARM Architecture', 'CyanogenMod'],
+  },
+  {
+    title: 'GNU Kernel Samsung Galaxy Y',
+    description: 'Embedded Linux kernel development for Samsung Galaxy Y (GT-S5360). Custom kernel implementation with architecture-specific optimizations, kernel modules, and ramdisk integration. Demonstrates deep understanding of low-level system programming, ARM architecture, and embedded Linux systems.',
+    icon: FaCog,
+    category: 'Kernel & OS Development',
+    link: 'https://github.com/percy-g2/GNU-kernel',
+    technologies: ['C', 'Assembly', 'Linux Kernel', 'Embedded Systems', 'ARM', 'Shell'],
   },
 ]
 
@@ -216,8 +232,8 @@ export default function Projects() {
                 {
                   title: 'CyanogenMod / LineageOS',
                   color: 'text-purple-400',
-                  highlights: ['CyanogenMod', 'LineageOS'],
-                  description: 'Recognized contributor to CyanogenMod and LineageOS, collaborating on core Android OS components, device-specific optimizations, and custom firmware development. Contributed to improving device performance and user customization options across multiple device manufacturers.',
+                  highlights: ['CyanogenMod', 'LineageOS', 'Motorola MSM8610', 'Samsung Galaxy Y', 'Legacy-Xperia', 'AndroidOpenSourceXperia', 'XperiaSTE', 'Motorola-CyanogenMod'],
+                  description: 'Recognized contributor to CyanogenMod and LineageOS, collaborating on core Android OS components, device-specific optimizations, and custom firmware development. Developed Android kernels for Motorola MSM8610 and Samsung Galaxy Y (GT-S5360) platforms, featuring comprehensive kernel architecture work including device drivers, filesystem modules, crypto subsystems, and bootloader integration. Active member of multiple Android kernel development organizations including Legacy-Xperia, AndroidOpenSourceXperia, XperiaSTE, and Motorola-CyanogenMod. Contributed to improving device performance, kernel-level optimizations, and user customization options across multiple device manufacturers.',
                 },
                 {
                   title: 'Embedded Systems & IoT',

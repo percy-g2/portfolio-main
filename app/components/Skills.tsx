@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const skillCategories = [
   {
     title: 'Programming Languages',
-    skills: ['Kotlin', 'Java', 'Swift', 'SwiftUI', 'JavaScript (ES6+)', 'C++', 'C#'],
+    skills: ['Kotlin', 'Java', 'Swift', 'SwiftUI', 'JavaScript (ES6+)', 'C', 'C++', 'C#', 'Assembly'],
   },
   {
     title: 'Mobile & Multiplatform',
@@ -41,7 +41,7 @@ const skillCategories = [
   },
   {
     title: 'Systems & Embedded',
-    skills: ['Embedded Operating System'],
+    skills: ['Linux Kernel Development', 'Android Kernel Development', 'Device Driver Development', 'ARM Architecture', 'Kernel Debugging', 'Bootloader Development', 'Custom ROM Development', 'Embedded Operating System', 'Low-level System Programming', 'Kernel Profiling'],
   },
   {
     title: 'Blockchain & Cryptography',
